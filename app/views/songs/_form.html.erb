@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span12">
+    <%= simple_form_for(@song) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <div class="boxes">
+            <pre id="song_parse" class="scroll_2 pre-scrollable" style="float:right"></pre>
+            <%= f.input :body, as: :text %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-warning btn-large" type="submit">Update Song</button>
+        </div>
+    <% end %>
+  </div>
+</div>

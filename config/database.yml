@@ -1,0 +1,17 @@
+common: &common
+  adapter: postgresql
+  host: localhost
+  username: vish
+  password: vish
+
+development:
+  <<: *common
+  database: ukesoc_development
+
+test:
+  <<: *common
+  database: ukesoc_test
+
+production:
+  <<: *common
+  database: ukesoc_production

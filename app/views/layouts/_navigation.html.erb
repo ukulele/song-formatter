@@ -1,0 +1,29 @@
+<%= link_to "Balham Ukesoc Songsheet Maker", root_path, :class => 'brand' %>
+<ul class="nav nav-tabs">
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Songs', songs_path %>
+      </li>
+      <% if current_user.has_role? :admin %>
+          <li>
+            <%= link_to 'Admin', users_path %>
+          </li>
+      <% end %>
+  <% else %>
+      <li>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </li>
+  <% end %>
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to "[#{current_user.id}: #{current_user.email}] - Edit account", edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+      </li>
+  <% else %>
+      <li>
+        <%= link_to 'Login', new_user_session_path %>
+      </li>
+  <% end %>
+</ul>

@@ -1,0 +1,32 @@
+// Place all the styles related to the songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+textarea#song_body {
+  font-size: 0.8em;
+  font-family: Menlo, monospace;
+  width: 45%;
+  max-height: 350px;
+}
+
+pre#song_parse {
+  font-size: 0.8em;
+  font-family: Menlo, monospace;
+  width: 45%;
+  background-color: #111111;
+  color: #EDEDED;
+}
+
+pre#song_body {
+  font-size: 0.8em;
+  font-family: Menlo, monospace;
+  width: 45%;
+}
+
+pre#song_parse_show {
+  font-size: 0.8em;
+  font-family: Menlo, monospace;
+  width: 45%;
+  background-color: #111111;
+  color: #EDEDED;
+  float: right;
+}

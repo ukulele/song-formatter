@@ -1,0 +1,5 @@
+.bundle
+.idea
+.rvmrc
+.rspec
+*.log

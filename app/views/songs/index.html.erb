@@ -1,0 +1,37 @@
+<h3>Listing your songs</h3>
+
+<% if @songs %>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>Title</th>
+        <th colspan="4">Owner</th>
+      </tr>
+      <% @songs.each do |song| %>
+          <tr>
+            <td><%= song.title %></td>
+            <td>
+              <% if song.user == current_user %>
+                  You
+              <% else %>
+                  User #<%= song.user.id %>
+              <% end %>
+            </td>
+            <td><%= link_to 'Show', song, :class => "btn btn-success" %></td>
+            <td>
+              <% if song.updatable_by?(current_user) %>
+                  <%= link_to 'Edit', edit_song_path(song), :class => "btn btn-warning" %>
+              <% end %>
+            </td>
+            <td>
+              <% if song.deletable_by?(current_user) %>
+                  <%= link_to 'Destroy', song, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger" %>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+
+<br/>
+
+<%= link_to 'Create a New Song', new_song_path, :class => "btn btn-success" %>
