@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
   resourcify
   belongs_to :user, class_name: 'User'
 
-  attr_accessible :parsed, :body, :title, :user_id
+  # attr_accessible :parsed, :body, :title, :user_id
   validates :title, :body, :presence => true
   before_update :parse_with_save
 
