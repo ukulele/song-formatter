@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   include Authority::UserAbilities
   rolify
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  # attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   has_many :songs, foreign_key: :user_id
 
